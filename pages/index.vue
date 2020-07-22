@@ -1,73 +1,49 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        project
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="home-page">
+    <section class="intro">
+      <h1>Get the latest tech news</h1>
+    </section>
+    <section class="featured-posts">
+      <nuxt-link :to="'/posts/' + 1">
+        <article class="post-preview">
+          <div class="post-thumbnail"></div>
+          <div class="post-content">
+            <h1>Post Title</h1>
+            <p>Preview Text</p>
+          </div>
+        </article>
+      </nuxt-link>
+    </section>
+    <section class="featured-posts">
+      <nuxt-link :to="'/posts/' + 2">
+        <article class="post-preview">
+          <div class="post-thumbnail"></div>
+          <div class="post-content">
+            <h1>Post Title 2</h1>
+            <p>Preview Text 2</p>
+          </div>
+        </article>
+      </nuxt-link>
+    </section>
   </div>
 </template>
 
-<script>
-export default {}
-</script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+<style scoped>
+
+.post-thumbnail {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+.post-content {
+  padding: 10px;
   text-align: center;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+a:hover .post-content,
+a:active .post-content {
+  background-color: #ccc;
 }
 </style>
